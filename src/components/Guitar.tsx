@@ -31,7 +31,11 @@ export default function Guitar({ guitar, dispatch }: GuitarProps) {
                     onClick={() =>
                         dispatch({
                             type: "add-to-cart",
-                            payload: { item: guitar },
+                            payload: {
+                                id: guitar.id,
+
+                                item: guitar,
+                            },
                         })
                     }
                 >

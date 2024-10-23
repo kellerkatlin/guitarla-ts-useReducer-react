@@ -76,6 +76,7 @@ export default function Header({ cart, dispatch }: HeaderProps) {
                                                                         payload:
                                                                             {
                                                                                 id: guitar.id,
+                                                                                item: guitar,
                                                                             },
                                                                     })
                                                                 }
@@ -92,6 +93,7 @@ export default function Header({ cart, dispatch }: HeaderProps) {
                                                                         payload:
                                                                             {
                                                                                 id: guitar.id,
+                                                                                item: guitar,
                                                                             },
                                                                     })
                                                                 }
@@ -109,6 +111,7 @@ export default function Header({ cart, dispatch }: HeaderProps) {
                                                                         payload:
                                                                             {
                                                                                 id: guitar.id,
+                                                                                item: guitar,
                                                                             },
                                                                     })
                                                                 }
@@ -131,7 +134,19 @@ export default function Header({ cart, dispatch }: HeaderProps) {
                                 <button
                                     className="btn btn-dark w-100 mt-3 p-2"
                                     onClick={() =>
-                                        dispatch({ type: "clear-cart" })
+                                        dispatch({
+                                            type: "clear-cart",
+                                            payload: {
+                                                item: {
+                                                    name: "",
+                                                    image: "",
+                                                    description: "",
+                                                    price: 0,
+                                                    id: 0,
+                                                },
+                                                id: 0,
+                                            },
+                                        })
                                     }
                                 >
                                     Vaciar Carrito
